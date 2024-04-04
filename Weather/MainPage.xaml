@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Weather.MainPage"
+             xmlns:local="clr-namespace:Weather">
+
+    <Grid>
+        <Image Source="{Binding WeatherData.Background}" Aspect="AspectFill"></Image>
+        <Frame StyleClass="BackgroundBorder" VerticalOptions="Center" BorderColor="Transparent" Margin="20">
+            <VerticalStackLayout Padding="20.0" Spacing="40" HorizontalOptions="Center">
+                <Label Text="{Binding WeatherData.City}" FontSize="Large" HorizontalTextAlignment="Center" TextColor="White" />
+                <VerticalStackLayout Spacing="24">
+                    <Image Source="{Binding WeatherData.Icon}" HeightRequest="200" Aspect="Center"/>
+                    <Label Text="{Binding WeatherData.Temperature}" FontSize="48" TextColor="White" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+                    <Label Text="{Binding WeatherData.Description}" HorizontalTextAlignment="Center" FontAttributes="Italic" TextColor="White" />
+                    <Label Text="{Binding WeatherData.FeelLike}" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="Subtitle" TextColor="White"/>
+                    <FlexLayout JustifyContent="SpaceBetween">
+                        <VerticalStackLayout>
+                            <Label Text="{Binding WeatherData.MinTemp}" FontAttributes="Italic" TextColor="White" FontSize="12" Padding="1" />
+                            <Label Text="{Binding WeatherData.MaxTemp}" FontAttributes="Italic" TextColor="White" FontSize="12" Padding="1" />
+                            <Label Text="{Binding WeatherData.Pressure}" FontAttributes="Italic" TextColor="White" FontSize="12" Padding="1" />
+                        </VerticalStackLayout>
+                        <VerticalStackLayout>
+                            <Label Text="{Binding WeatherData.Humidity}" HorizontalTextAlignment="End" FontAttributes="Italic" TextColor="White" FontSize="12" Padding="1" />
+                            <Label Text="{Binding WeatherData.Wind}" HorizontalTextAlignment="End" FontAttributes="Italic" TextColor="White" FontSize="12" Padding="1" />
+                            <Label Text="{Binding WeatherData.Cloudly}" HorizontalTextAlignment="End" FontAttributes="Italic" TextColor="White" FontSize="12" Padding="1" />
+                        </VerticalStackLayout>
+                    </FlexLayout>
+                </VerticalStackLayout>
+            </VerticalStackLayout>
+        </Frame>
+    </Grid>
+</ContentPage>
